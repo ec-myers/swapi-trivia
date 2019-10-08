@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { getFilms } from '../Util/apiCalls';
 import '../App/App.scss';
+import Form from '../Form/Form';
 
 class App extends Component {
   constructor() {
@@ -16,7 +17,7 @@ class App extends Component {
 
   render() {
     return(
-      <p></p>
+      <Form />
     )
   }
 }
