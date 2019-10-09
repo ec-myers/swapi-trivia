@@ -27,6 +27,7 @@ export const getCharacters = (id) => {
   .then(data => cleanCharacterData(data))
   .then(chars => getSpeciesDataForCharacter(chars))
   .then(chars => getHomeWorldDataForCharacter(chars))
+  .then(chars => getRelatedFilmsForCharacter(chars))
 
 }
 
@@ -41,7 +42,6 @@ const cleanCharacterData = (characterUrls) => {
       }
     })
   })
-  console.log(charactersData)
   return Promise.all(charactersData)
 }
 
@@ -71,3 +71,20 @@ const getHomeWorldDataForCharacter = (chars) => {
   return Promise.all(homeworldData)
 }
 
+const getRelatedFilmsForCharacter = (chars) => {
+  let relatedFilmsData = chars.map(char => {
+
+    let filmNames = char.films.map(film => {
+      return fetch(film).then(res => res.json()).then(film => film.title)
+    })
+    return Promise.all(filmNames).then(namesOfFilms => {
+      return {
+        ...char,
+        films: namesOfFilms
+      }
+    }
+    )
+  })
+  // console.log('film',relatedFilmsData)
+  return Promise.all(relatedFilmsData)
+}
