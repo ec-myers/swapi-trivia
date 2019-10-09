@@ -3,13 +3,16 @@ import { getFilms } from '../Util/apiCalls';
 import '../App/App.scss';
 import Form from '../Form/Form';
 import Container from '../Container/Container';
+import Nav from '../Nav/Nav'
 
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies:[]
+      userInfo: {},
+      movies:[],
+      isFormComplete: false
     }
   }
 
@@ -17,11 +20,17 @@ class App extends Component {
     getFilms().then(data => this.setState({movies: data}))
   }
 
+  getFormData = (userInfo) => {
+    this.setState({userInfo: userInfo, isFormComplete:true})
+  }
+
   render() {
+    const{movies, isFormComplete, userInfo} = this.state
     return (
       <>
-        <Form />
-        <Container movies={this.state.movies}/>
+        {!isFormComplete && <Form getFormData={this.getFormData}/>}
+        {isFormComplete && <Nav user={userInfo}/>}
+        {isFormComplete && <Container movies={movies}/>}
       </>
     )
   }
