@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { getFilms } from '../Util/apiCalls';
+import { Link, BrowserRouter, Switch, Route } from 'react-router-dom';
 import '../App/App.scss';
 import Form from '../Form/Form';
 import Container from '../Container/Container';
-import Nav from '../Nav/Nav'
+import Nav from '../Nav/Nav';
 
 
 class App extends Component {
