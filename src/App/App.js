@@ -9,7 +9,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies:[]
+      userInfo: {},
+      movies:[],
+      isFormComplete: false
     }
   }
 
@@ -17,11 +19,16 @@ class App extends Component {
     getFilms().then(data => this.setState({movies: data}))
   }
 
+  getFormData = (userInfo) => {
+    this.setState({userInfo: userInfo, isFormComplete:true})
+  }
+
   render() {
+    const{movies, isFormComplete} = this.state
     return (
       <>
-        <Form />
-        <Container movies={this.state.movies}/>
+        {!isFormComplete && <Form getFormData={this.getFormData}/>}
+        <Container movies={movies}/>
       </>
     )
   }
