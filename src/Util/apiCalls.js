@@ -25,7 +25,8 @@ export const getCharacters = (id) => {
   return fetch(url).then(res => res.json())
   .then(data => data.characters)
   .then(data => cleanCharacterData(data))
-  .then(chars => getSpeciesForCharacter(chars))
+  .then(chars => getSpeciesDataForCharacter(chars))
+  .then(chars => getHomeWorldDataForCharacter(chars))
 
 }
 
@@ -44,7 +45,7 @@ const cleanCharacterData = (characterUrls) => {
   return Promise.all(charactersData)
 }
 
-const getSpeciesForCharacter = (chars) => {
+const getSpeciesDataForCharacter = (chars) => {
   let speciesData = chars.map( char => {
     return fetch(char.species).then(res => res.json()).then(species => {
       return {
@@ -55,5 +56,18 @@ const getSpeciesForCharacter = (chars) => {
     }
   )
   return Promise.all(speciesData)
+}
+
+const getHomeWorldDataForCharacter = (chars) => {
+  let homeworldData = chars.map(char => {
+    return fetch(char.homeworld).then(res => res.json()).then(homeworld => {
+      return {
+        ...char,
+        homeworld: homeworld.name,
+        population: homeworld.population
+      }
+    })
+  })
+  return Promise.all(homeworldData)
 }
 
