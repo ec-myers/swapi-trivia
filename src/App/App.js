@@ -3,6 +3,7 @@ import { getFilms } from '../Util/apiCalls';
 import '../App/App.scss';
 import Form from '../Form/Form';
 import Container from '../Container/Container';
+import Nav from '../Nav/Nav'
 
 
 class App extends Component {
@@ -24,10 +25,11 @@ class App extends Component {
   }
 
   render() {
-    const{movies, isFormComplete} = this.state
+    const{movies, isFormComplete, userInfo} = this.state
     return (
       <>
         {!isFormComplete && <Form getFormData={this.getFormData}/>}
+        {isFormComplete && <Nav user={userInfo}/>}
         {isFormComplete && <Container movies={movies}/>}
       </>
     )
