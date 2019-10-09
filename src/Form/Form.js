@@ -31,7 +31,10 @@ class Form extends Component {
     }
 
     if(this.state.name && this.state.quote && this.state.rank) {
-      console.log('submit')
+      let user = {name:this.state.name, 
+        quote:this.state.quote, 
+        rank: this.state.rank}
+      this.props.getFormData(user)
     }
   }
 
