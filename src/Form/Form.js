@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import './Form.scss'
+import PropTypes from 'prop-types';
+import './Form.scss';
 
 class Form extends Component {
-  constructor() {
-    super();
+  constructor(getFormData) {
+    super(getFormData);
     this.state = {
       name: "",
       quote: "",
@@ -84,3 +85,7 @@ class Form extends Component {
 }
 
 export default Form;
+
+Form.propTypes = {
+  getFormData: PropTypes.func.isRequired
+}
