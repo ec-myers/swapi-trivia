@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Form.scss'
 
 class Form extends Component {
   constructor() {
@@ -43,10 +44,14 @@ class Form extends Component {
     return(
       <form>
         <label htmlFor="name">Name</label>
-        <input value={name} id="name" onChange={this.handleChange}/>
+        <input value={name} id="name" 
+        placeholder="Enter a name"
+        onChange={this.handleChange}/>
         {nameErr && <p>No Name</p>}
-        <label htmlFor="quote">Favorite Quote</label>
-        <input value={quote} id="quote" onChange={this.handleChange}/>
+        <label htmlFor="quote">Favorite Star Wars Quote</label>
+        <input value={quote} id="quote" 
+          placeholder="Enter your favorite Quote"        
+        onChange={this.handleChange}/>
         {quoteErr && <p>No Quote</p>}
         <label htmlFor="rank">Rank</label>
         <select value={rank} onChange={this.handleChange} id="rank">

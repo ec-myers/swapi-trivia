@@ -28,7 +28,7 @@ class App extends Component {
     return (
       <>
         {!isFormComplete && <Form getFormData={this.getFormData}/>}
-        <Container movies={movies}/>
+        {isFormComplete && <Container movies={movies}/>}
       </>
     )
   }
