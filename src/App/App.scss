@@ -1,22 +1,16 @@
+$accent-color-dark: rgba(108, 91, 117, 0.8);
+$accent-color-light: rgba(242,136,79, 0.8);
+
+* {
+  box-sizing: border-box;
+  font-family: 'IBM Plex Mono', monospace;
+  margin: 0;
+  padding: 0
+}
+
 .App {
-  text-align: center;
+  background: url(../Images/tatooine_background.jpg); 
+  background-size: cover;
+  background-repeat: no-repeat
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
-}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './Form.scss';
 
@@ -50,7 +51,7 @@ class Form extends Component {
     return(
       <form>
         <label htmlFor="name">Name</label>
-        <input value={name} id="name" 
+        <input autoFocus value={name} id="name" 
         placeholder="Enter a name"
         className={nameClass}
         onChange={this.handleChange}/>
@@ -69,7 +70,6 @@ class Form extends Component {
         <select value={rank} 
         className={rankClass}
         onChange={this.handleChange} id="rank">
-          <option value="">Choose A Rank</option>
           <option value="Padawan">Padawan</option>
           <option value="Jedi Knight">Jedi Knight</option>
           <option value="Jedi Master">Jedi Master</option>
@@ -77,11 +77,12 @@ class Form extends Component {
         <div>
         {rankErr && <p>No Rank</p>}
         </div>
-        <button type="button" onClick={ this.handleSubmit }>May The Force Be With You</button>
+        <Link to='/movies' onClick={this.handleSubmit}>
+          <button type="button">May The Force Be With You</button>
+        </Link>
       </form>
     )
   }
-
 }
 
 export default Form;
