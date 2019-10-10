@@ -24,7 +24,6 @@ class App extends Component {
   }
 
   getFormData = (userInfo) => {
-    console.log('inside getFormData')
     this.setState({userInfo: userInfo, isFormComplete:true})
   }
 
@@ -41,6 +40,7 @@ class App extends Component {
       </main>
   
     )
+
   }
 }
 
