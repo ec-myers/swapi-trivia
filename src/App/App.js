@@ -28,23 +28,19 @@ class App extends Component {
   }
 
   render() {
-    const{movies, isFormComplete, userInfo} = this.state
+    const{movies, characters, isFormComplete, userInfo} = this.state
     return (
       <main className="App">
         {/* <Nav user={userInfo} /> */}
-        <Route exact path='/' component={() => <Form getFormData={this.getFormData} />} />
-        <Route exact path='/movies' component={() => <><Nav user={userInfo} /> <Container movies={movies} /></>} />
-        <Route exact path='/favorites' component={() => 
-          <>
-            <Nav user={userInfo} /> 
-            <Container movies={movies} />
-          </>} />
-          {/* {!isFormComplete && <Form getFormData={this.getFormData}/>}
-          {isFormComplete && <Nav user={userInfo}/>}
-          {isFormComplete && <Container movies={movies}/>} */}
+        <Route exact path='/' render={() => <Form getFormData={this.getFormData} />} />
+        {isFormComplete && <Nav user={userInfo} />}
+        <Route exact path='/movies' render={() => <Container cards={movies} />} />
+        <Route exact path='/movies/:id' render={() => <Container cards={characters} /> } />
+        <Route exact path='/favorites' render={() => <Container movies={movies} />} />
       </main>
   
     )
+
   }
 }
 
