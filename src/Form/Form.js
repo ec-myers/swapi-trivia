@@ -50,7 +50,7 @@ class Form extends Component {
     return(
       <form>
         <label htmlFor="name">Name</label>
-        <input value={name} id="name" 
+        <input autoFocus value={name} id="name" 
         placeholder="Enter a name"
         className={nameClass}
         onChange={this.handleChange}/>
@@ -69,7 +69,6 @@ class Form extends Component {
         <select value={rank} 
         className={rankClass}
         onChange={this.handleChange} id="rank">
-          <option value="">Choose A Rank</option>
           <option value="Padawan">Padawan</option>
           <option value="Jedi Knight">Jedi Knight</option>
           <option value="Jedi Master">Jedi Master</option>
