@@ -24,6 +24,7 @@ class App extends Component {
   }
 
   getFormData = (userInfo) => {
+    console.log('inside getFormData')
     this.setState({userInfo: userInfo, isFormComplete:true})
   }
 
@@ -32,11 +33,11 @@ class App extends Component {
     return (
       <main className="App">
         {/* <Nav user={userInfo} /> */}
-        <Route exact path='/' component={() => <Form getFormData={this.getFormData} />} />
+        <Route exact path='/' render={() => <Form getFormData={this.getFormData} />} />
         {isFormComplete && <Nav user={userInfo} />}
-        <Route exact path='/movies' component={() => <Container cards={movies} />} />
-        <Route exact path='/movies/:id' component={() => <Container cards={characters} /> } />
-        <Route exact path='/favorites' component={() => <Container movies={movies} />} />
+        <Route exact path='/movies' render={() => <Container cards={movies} />} />
+        <Route exact path='/movies/:id' render={() => <Container cards={characters} /> } />
+        <Route exact path='/favorites' render={() => <Container movies={movies} />} />
       </main>
   
     )
