@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './Form.scss';
 
@@ -76,11 +77,12 @@ class Form extends Component {
         <div>
         {rankErr && <p>No Rank</p>}
         </div>
-        <button type="button" onClick={ this.handleSubmit }>May The Force Be With You</button>
+        <Link to='/movies' onClick={this.handleSubmit}>
+          <button type="button">May The Force Be With You</button>
+        </Link>
       </form>
     )
   }
-
 }
 
 export default Form;
