@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getFilms, getCharacters } from '../Util/apiCalls';
-import { Link, BrowserRouter, Switch, Route } from 'react-router-dom';
+import { NavLink, BrowserRouter, Switch, Route } from 'react-router-dom';
 import '../App/App.scss';
 import Form from '../Form/Form';
 import Container from '../Container/Container';
@@ -30,11 +30,20 @@ class App extends Component {
   render() {
     const{movies, isFormComplete, userInfo} = this.state
     return (
-      <>
-        {!isFormComplete && <Form getFormData={this.getFormData}/>}
-        {isFormComplete && <Nav user={userInfo}/>}
-        {isFormComplete && <Container movies={movies}/>}
-      </>
+      <main className="App">
+        {/* <Nav user={userInfo} /> */}
+        <Route exact path='/' component={() => <Form getFormData={this.getFormData} />} />
+        <Route exact path='/movies' component={() => <><Nav user={userInfo} /> <Container movies={movies} /></>} />
+        <Route exact path='/favorites' component={() => 
+          <>
+            <Nav user={userInfo} /> 
+            <Container movies={movies} />
+          </>} />
+          {/* {!isFormComplete && <Form getFormData={this.getFormData}/>}
+          {isFormComplete && <Nav user={userInfo}/>}
+          {isFormComplete && <Container movies={movies}/>} */}
+      </main>
+  
     )
   }
 }
