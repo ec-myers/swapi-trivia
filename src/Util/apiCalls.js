@@ -13,6 +13,7 @@ const sortFilmsByReleaseDate = (data) => {
   }).map((movie,i) => {
     return {
       title: movie.title,
+      scrollText: movie.opening_crawl,
       id: i + 1,
       episode: movie.episode_id,
       releaseYear: movie.release_date.slice(0, 4)
@@ -73,7 +74,6 @@ const getHomeWorldDataForCharacter = (chars) => {
 
 const getRelatedFilmsForCharacter = (chars) => {
   let relatedFilmsData = chars.map(char => {
-
     let filmNames = char.films.map(film => {
       return fetch(film).then(res => res.json()).then(film => film.title)
     })
@@ -85,6 +85,5 @@ const getRelatedFilmsForCharacter = (chars) => {
     }
     )
   })
-  // console.log('film',relatedFilmsData)
   return Promise.all(relatedFilmsData)
 }
