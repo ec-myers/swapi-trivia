@@ -1,6 +1,7 @@
 import React from 'react';
 import MovieCard from '../MovieCard/MovieCard';
 import CharacterCard from '../CharacterCard/CharacterCard';
+import './Container.scss';
 
 const Container = ({cards}) => {
   console.log(cards)
@@ -11,7 +12,7 @@ const Container = ({cards}) => {
     return <CharacterCard key={card.name} character={card} />
   })
 
-  return(<section>
+  return(<section className='Container'>
     {allCards}
   </section>)
 }
