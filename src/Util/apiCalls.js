@@ -13,6 +13,7 @@ const sortFilmsByReleaseDate = (data) => {
   }).map((movie,i) => {
     return {
       title: movie.title,
+      scrollText: movie.opening_crawl,
       id: i + 1,
       episode: movie.episode_id,
       releaseYear: movie.release_date.slice(0, 4)
@@ -33,6 +34,7 @@ export const getCharacters = (id) => {
 
 const cleanCharacterData = (characterUrls) => {
   let charactersData = characterUrls.map(charUrl => {
+    console.log('charURL', charUrl)
     return fetch(charUrl).then(res => res.json()).then(data => {
       return {
         name:data.name,
@@ -46,8 +48,15 @@ const cleanCharacterData = (characterUrls) => {
 }
 
 const getSpeciesDataForCharacter = (chars) => {
-  let speciesData = chars.map( char => {
+  let speciesData = chars.map(char => {
+    if (char.species.length === 0) {
+      return {
+        ...char,
+        species: 'None'
+      }
+    }
     return fetch(char.species).then(res => res.json()).then(species => {
+      console.log(char.species)
       return {
         ...char,
         species: species.name
@@ -73,7 +82,6 @@ const getHomeWorldDataForCharacter = (chars) => {
 
 const getRelatedFilmsForCharacter = (chars) => {
   let relatedFilmsData = chars.map(char => {
-
     let filmNames = char.films.map(film => {
       return fetch(film).then(res => res.json()).then(film => film.title)
     })
@@ -85,6 +93,5 @@ const getRelatedFilmsForCharacter = (chars) => {
     }
     )
   })
-  // console.log('film',relatedFilmsData)
   return Promise.all(relatedFilmsData)
 }
