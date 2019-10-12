@@ -4,7 +4,8 @@ import CharacterCard from '../CharacterCard/CharacterCard';
 import './Container.scss';
 
 const Container = ({cards, goToMovieCharacters}) => {
-  let allCards = cards.map(card => {
+  let firstTenCards = cards.slice(0, 10)
+  let allCards = firstTenCards.map(card => {
     if (card.title) {
       return <MovieCard key={card.episode} movie={card} goToMovieCharacters={goToMovieCharacters}/>
     }
