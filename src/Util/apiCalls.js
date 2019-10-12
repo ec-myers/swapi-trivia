@@ -34,6 +34,7 @@ export const getCharacters = (id) => {
 
 const cleanCharacterData = (characterUrls) => {
   let charactersData = characterUrls.map(charUrl => {
+    console.log('charURL', charUrl)
     return fetch(charUrl).then(res => res.json()).then(data => {
       return {
         name:data.name,
@@ -47,8 +48,15 @@ const cleanCharacterData = (characterUrls) => {
 }
 
 const getSpeciesDataForCharacter = (chars) => {
-  let speciesData = chars.map( char => {
+  let speciesData = chars.map(char => {
+    if (char.species.length === 0) {
+      return {
+        ...char,
+        species: 'None'
+      }
+    }
     return fetch(char.species).then(res => res.json()).then(species => {
+      console.log(char.species)
       return {
         ...char,
         species: species.name

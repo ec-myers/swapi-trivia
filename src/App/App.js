@@ -28,10 +28,8 @@ class App extends Component {
 
   goToMovieCharacters = (e) => {
     let id = parseInt(e.target.id)
-    console.log('id', id)
     let targetMovie = this.state.movies[id-1];
-    console.log('mov', targetMovie)
-    this.setState({selectedMovie: targetMovie})
+    this.setState({selectedMovie: targetMovie, haveCharacters: false, characters: []})
     getCharacters(id).then(data => this.setState({characters: data, haveCharacters: true}))
   }
 
