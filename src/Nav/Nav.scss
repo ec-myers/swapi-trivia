@@ -1,17 +1,82 @@
+$accent-color-dark: rgba(108, 91, 117, 0.8);
+$accent-color-light: rgba(242,136,79, 0.8);
+$font-color: #ffffff;
+
 nav {
-  border: 1px solid red;
-  display: flex;
   align-items: center;
+  background-color:  rgb(108, 91, 117);
+  border-bottom: solid 2px #ffffff;
+  display: flex;
+  height: 75px;
   justify-content: space-between;
-  div {
-    display: flex;
-    flex-direction: column;
+  
+  a {
+    font-size: 20px;
+    text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+      color: $accent-color-light;
+    }
+
+    a:active {
+      color: $accent-color-light;
+    }
   }
+
   button {
-    height: 10%;
-    width: 20%;
+    background-color: $accent-color-light;
+    border-bottom: 2px solid #6c5b75cc;
+    border-radius: 5px;
+    color: $font-color;
+    font-size: 16px;
+    font-size: 18px;
+    height: 40px;
+    margin-right: 20px;
+    width: 125px;
+    
     &:hover {
       cursor: pointer;
     }
   }
 }
+
+.inner {
+    background: rgb(9, 201, 153);
+    padding: 1em;
+    border-radius: 10px;
+    width: 250px;
+    clip-path: circle(10% at 90% 20%);
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        clip-path: circle(75%);
+        background: #00B6FF;
+    }
+
+    h1 {
+        color: white;
+        margin: 0;
+    }
+
+    p {
+        color: white;
+        font-size: .8rem;
+    }
+
+    span {
+        float: right;
+        color: white;
+        font-weight: bold;
+        transition: color .5s;
+        position: relative;
+        margin-right: 4%;
+    }
+
+    &:hover span {
+        color: rgba(255,255,255,0)
+    }
+  }
+
+//body, container div, inner div, h1, p

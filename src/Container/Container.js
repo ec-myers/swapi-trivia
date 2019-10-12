@@ -1,6 +1,7 @@
 import React from 'react';
 import MovieCard from '../MovieCard/MovieCard';
 import CharacterCard from '../CharacterCard/CharacterCard';
+import './Container.scss';
 
 const Container = ({cards, goToMovieCharacters}) => {
   let allCards = cards.map(card => {
@@ -10,7 +11,7 @@ const Container = ({cards, goToMovieCharacters}) => {
     return <CharacterCard key={card.name} character={card} />
   })
 
-  return(<section>
+  return(<section className='Container'>
     {allCards}
   </section>)
 }
