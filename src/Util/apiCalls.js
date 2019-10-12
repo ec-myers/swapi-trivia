@@ -40,7 +40,7 @@ const cleanCharacterData = (characterUrls) => {
         name:data.name,
         homeworld: data.homeworld,
         species: data.species,
-        films: data.films,
+        films: data.films
       }
     })
   })
