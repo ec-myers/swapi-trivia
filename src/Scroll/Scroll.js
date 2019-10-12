@@ -2,8 +2,8 @@ import React from 'react';
 import './Scroll.scss'
 
 
-const Scroll = ({movie}) => {
-  const {title, scrollText, episode} = movie;
+const Scroll = ({selectedMovie}) => {
+  const {title, scrollText, episode} = selectedMovie;
   return (
     <>
     < div class="fade" ></div >

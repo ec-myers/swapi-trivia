@@ -15,19 +15,24 @@ class App extends Component {
       userInfo: {},
       movies:[],
       characters: [],
+      selectedMovie: {},
+      haveMovies: false,
       haveCharacters: false, 
       isFormComplete: false
     }
   }
 
   componentDidMount() {
-    getFilms().then(data => this.setState({movies: data}))
+    getFilms().then(data => this.setState({movies: data, haveMovies: true}))
   }
 
   goToMovieCharacters = (e) => {
     let id = parseInt(e.target.id)
     console.log('id', id)
-    getCharacters(2).then(data => this.setState({characters: data}))
+    let targetMovie = this.state.movies[id-1];
+    console.log('mov', targetMovie)
+    this.setState({selectedMovie: targetMovie})
+    getCharacters(id).then(data => this.setState({characters: data, haveCharacters: true}))
   }
 
   getFormData = (userInfo) => {
@@ -35,16 +40,15 @@ class App extends Component {
   }
 
   render() {
-    const{movies, characters, isFormComplete, userInfo,} = this.state
+    const{movies, characters, isFormComplete, userInfo, haveCharacters, selectedMovie} = this.state
 
     return (
       <main className="App">
-        {/* <Nav user={userInfo} /> */}
         <Route exact path='/' render={() => <Form getFormData={this.getFormData} />} />
         {isFormComplete && <Nav user={userInfo} />}
-        {/* {movies.length > 0 && characters.length === 0 && <Scroll movie={movies[0]}/>} */}
         <Route exact path='/movies' render={() => <Container cards={movies} goToMovieCharacters={this.goToMovieCharacters} />} />
-        <Route exact path='/movies/:id' render={() => <Container cards={characters} /> } />
+        {haveCharacters && <Route exact path='/movies/:id' render={() => <Container cards={characters} /> } />}
+        {!haveCharacters && <Scroll selectedMovie={selectedMovie}/>}
         <Route exact path='/favorites' render={() => <Container movies={movies} />} />
       </main>
   
