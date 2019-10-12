@@ -18,7 +18,8 @@ class App extends Component {
       selectedMovie: {},
       haveMovies: false,
       haveCharacters: false, 
-      isFormComplete: false
+      isFormComplete: false,
+      favorites: []
     }
   }
 
@@ -37,17 +38,37 @@ class App extends Component {
     this.setState({userInfo: userInfo, isFormComplete:true})
   }
 
+  toggleFavorite = (character) => {
+    const { favorites } = this.state;
+  
+    favorites.map(favorite => favorite.name).includes(character.name) ? this.removeFavorite(character) : this.addFavorite(character);
+  }
+
+  addFavorite = (character) => {
+    const { favorites } = this.state;
+    let newFavorites = [...favorites, character];
+    
+    this.setState({favorites: newFavorites });
+  }
+
+  removeFavorite = (character) => {
+    const { favorites } = this.state;
+    let newFavorites = favorites.filter(favorite => favorite.name !== character.name);
+
+    this.setState({favorites: newFavorites});
+  }
+
   render() {
-    const{movies, characters, isFormComplete, userInfo, haveCharacters, selectedMovie} = this.state
+    const{movies, characters, isFormComplete, userInfo, haveCharacters, selectedMovie, favorites} = this.state
 
     return (
       <main className="App">
         <Route exact path='/' render={() => <Form getFormData={this.getFormData} />} />
         {isFormComplete && <Nav user={userInfo} />}
         <Route exact path='/movies' render={() => <Container cards={movies} goToMovieCharacters={this.goToMovieCharacters} />} />
-        {haveCharacters && <Route exact path='/movies/:id' render={() => <Container cards={characters} /> } />}
-        {!haveCharacters && <Scroll selectedMovie={selectedMovie}/>}
-        <Route exact path='/favorites' render={() => <Container movies={movies} />} />
+        {haveCharacters && <Route exact path='/movies/:id' render={() => <Container cards={characters} toggleFavorite={this.toggleFavorite} favorites={favorites} /> } />}
+        {!haveCharacters && <Scroll selectedMovie={selectedMovie} />}
+        <Route exact path='/favorites' render={() => <Container favorites={favorites} toggleFavorite={this.toggleFavorite} />} />
       </main>
   
     )
