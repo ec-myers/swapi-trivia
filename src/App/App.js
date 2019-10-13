@@ -81,6 +81,7 @@ class App extends Component {
       <main className="App">
         <Route exact path='/' render={() => <Form getFormData={this.getFormData} />} />
         {isFormComplete && <Nav logOut={this.logOut} user={userInfo} />}
+        {!haveMovies && <div className='loading-img'></div>}
         <Route exact path='/movies' render={() => <Container cards={movies} goToMovieCharacters={this.goToMovieCharacters} />} />
         {haveCharacters && <Route exact path='/movies/:id' render={() => <Container cards={characters} toggleFavorite={this.toggleFavorite} favorites={favorites} /> } />}
         <Route exact path='/favorites' render={() => <Container type='favorites' cards={favorites} favorites={favorites} toggleFavorite={this.toggleFavorite} />} />
