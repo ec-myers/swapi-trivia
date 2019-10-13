@@ -5,18 +5,18 @@ import './Scroll.scss'
 const Scroll = ({selectedMovie}) => {
   const {title, scrollText, episode} = selectedMovie;
   return (
-    <>
-    < div class="fade" ></div >
-      <section class="star-wars">
-        <div class="crawl">
-          <div class="title">
+    <div className="scroll">
+      < div className="fade" ></div >
+      <section className="star-wars">
+        <div className="crawl">
+          <div className="title">
             <p>Episode {episode}</p>
             <h1>{title}</h1>
           </div>
           <p>{scrollText}</p>
         </div>
       </section>
-      </>
+    </div>
   )
 }
 
