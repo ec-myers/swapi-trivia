@@ -59,12 +59,13 @@ class App extends Component {
   }
 
   render() {
-    const{movies, characters, isFormComplete, userInfo, haveCharacters, selectedMovie, favorites} = this.state
+    const{movies, characters, isFormComplete, userInfo, haveCharacters, selectedMovie, favorites, haveMovies} = this.state
 
     return (
       <main className="App">
         <Route exact path='/' render={() => <Form getFormData={this.getFormData} />} />
         {isFormComplete && <Nav user={userInfo} />}
+        {!haveMovies && <div className='loading-img'></div>}
         <Route exact path='/movies' render={() => <Container cards={movies} goToMovieCharacters={this.goToMovieCharacters} />} />
         {haveCharacters && <Route exact path='/movies/:id' render={() => <Container cards={characters} toggleFavorite={this.toggleFavorite} favorites={favorites} /> } />}
         {!haveCharacters && <Scroll selectedMovie={selectedMovie} />}
