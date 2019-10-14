@@ -19,7 +19,7 @@ describe('Nav', () => {
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot()
   })
-  it('should call logOut metho prop when link is clicked', () => {
+  it('should call logOut method prop when link is clicked', () => {
     wrapper.find('Link').simulate('click');
     expect(mockLogout).toHaveBeenCalled()
   })
