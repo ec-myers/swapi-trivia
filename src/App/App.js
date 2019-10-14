@@ -17,14 +17,25 @@ class App extends Component {
       characters: [],
       selectedMovie: {},
       haveMovies: false,
-      haveCharacters: false, 
+      haveCharacters: true, 
       isFormComplete: false,
       favorites: []
     }
   }
 
   componentDidMount() {
+
     getFilms().then(data => this.setState({movies: data, haveMovies: true}))
+
+    if(localStorage.getItem('favorites')) {
+      const storedFavorites = JSON.parse(localStorage.getItem('favorites'))
+      this.setState({favorites: storedFavorites})
+    }
+
+    if(localStorage.getItem('userInfo')) {
+      const storedUser = JSON.parse(localStorage.getItem('userInfo'))
+      this.setState({ userInfo: storedUser, isFormComplete: true })
+    }
   }
 
   goToMovieCharacters = (e) => {
@@ -36,40 +47,45 @@ class App extends Component {
 
   getFormData = (userInfo) => {
     this.setState({userInfo: userInfo, isFormComplete:true})
+    localStorage.setItem('userInfo', JSON.stringify(userInfo))
   }
 
   toggleFavorite = (character) => {
     const { favorites } = this.state;
-  
     favorites.map(favorite => favorite.name).includes(character.name) ? this.removeFavorite(character) : this.addFavorite(character);
   }
 
   addFavorite = (character) => {
     const { favorites } = this.state;
     let newFavorites = [...favorites, character];
-    
     this.setState({favorites: newFavorites });
+    localStorage.setItem('favorites', JSON.stringify(newFavorites));
   }
 
   removeFavorite = (character) => {
     const { favorites } = this.state;
     let newFavorites = favorites.filter(favorite => favorite.name !== character.name);
-
     this.setState({favorites: newFavorites});
+    localStorage.setItem('favorites', JSON.stringify(newFavorites));
+  }
+
+  logOut = () => {
+    localStorage.clear()
+    this.setState({isFormComplete: false})
   }
 
   render() {
-    const{movies, characters, isFormComplete, userInfo, haveCharacters, selectedMovie, favorites, haveMovies} = this.state
+    const{movies, characters, isFormComplete, userInfo, haveCharacters, selectedMovie, haveMovies, favorites} = this.state
 
     return (
       <main className="App">
         <Route exact path='/' render={() => <Form getFormData={this.getFormData} />} />
-        {isFormComplete && <Nav user={userInfo} />}
+        {isFormComplete && <Nav logOut={this.logOut} user={userInfo} />}
         {!haveMovies && <div className='loading-img'></div>}
         <Route exact path='/movies' render={() => <Container cards={movies} goToMovieCharacters={this.goToMovieCharacters} />} />
         {haveCharacters && <Route exact path='/movies/:id' render={() => <Container cards={characters} toggleFavorite={this.toggleFavorite} favorites={favorites} /> } />}
-        {!haveCharacters && <Scroll selectedMovie={selectedMovie} />}
         <Route exact path='/favorites' render={() => <Container type='favorites' cards={favorites} favorites={favorites} toggleFavorite={this.toggleFavorite} />} />
+        {haveMovies && !haveCharacters && <Scroll selectedMovie={selectedMovie} />}
       </main>
   
     )
