@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form should match the snapshot 1`] = `
+<form>
+  <div
+    className="form-background"
+  >
+    <label
+      htmlFor="name"
+    >
+      Name
+    </label>
+    <input
+      autoFocus={true}
+      className=""
+      id="name"
+      onChange={[Function]}
+      placeholder="Enter a name"
+      value=""
+    />
+    <div />
+    <label
+      htmlFor="quote"
+    >
+      Favorite Star Wars Quote
+    </label>
+    <input
+      className=""
+      id="quote"
+      onChange={[Function]}
+      placeholder="Enter your favorite Quote"
+      value=""
+    />
+    <div />
+    <label
+      htmlFor="rank"
+    >
+      Rank
+    </label>
+    <select
+      id="rank"
+      onChange={[Function]}
+      value="Padawan"
+    >
+      <option
+        selected={true}
+        value="Padawan"
+      >
+        Padawan
+      </option>
+      <option
+        value="Jedi Knight"
+      >
+        Jedi Knight
+      </option>
+      <option
+        value="Jedi Master"
+      >
+        Jedi Master
+      </option>
+    </select>
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      May The Force Be With You
+    </button>
+  </div>
+</form>
+`;

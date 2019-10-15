@@ -51,30 +51,32 @@ class Form extends Component {
 
     return (
       <form>
-        <label htmlFor="name">Name</label>
-        <input autoFocus value={name} id="name" 
-        placeholder="Enter a name"
-        className={nameClass}
-        onChange={this.handleChange}/>
-        <div>
-        {nameErr && <p>No Name</p>}
+        <div className="form-background">
+          <label htmlFor="name">Name</label>
+          <input autoFocus value={name} id="name" 
+          placeholder="Enter a name"
+          className={nameClass}
+          onChange={this.handleChange}/>
+          <div>
+          {nameErr && <p>Please enter a name</p>}
+          </div>
+          <label htmlFor="quote">Favorite Star Wars Quote</label>
+          <input value={quote} id="quote"
+          className={quoteClass} 
+            placeholder="Enter your favorite Quote"  
+          onChange={this.handleChange}/>
+          <div>
+          {quoteErr && <p>Please enter a quote</p>}
+          </div>
+          <label htmlFor="rank">Rank</label>
+          <select value={rank} 
+          onChange={this.handleChange} id="rank">
+            <option value="Padawan" selected>Padawan</option>
+            <option value="Jedi Knight">Jedi Knight</option>
+            <option value="Jedi Master">Jedi Master</option>
+          </select>
+            <button type="button" onClick={this.handleSubmit}>May The Force Be With You</button>
         </div>
-        <label htmlFor="quote">Favorite Star Wars Quote</label>
-        <input value={quote} id="quote"
-        className={quoteClass} 
-          placeholder="Enter your favorite Quote"  
-        onChange={this.handleChange}/>
-        <div>
-        {quoteErr && <p>No Quote</p>}
-        </div>
-        <label htmlFor="rank">Rank</label>
-        <select value={rank} 
-        onChange={this.handleChange} id="rank">
-          <option value="Padawan" selected>Padawan</option>
-          <option value="Jedi Knight">Jedi Knight</option>
-          <option value="Jedi Master">Jedi Master</option>
-        </select>
-          <button type="button" onClick={this.handleSubmit}>May The Force Be With You</button>
       </form>
     )
   }
