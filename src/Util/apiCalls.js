@@ -1,8 +1,11 @@
 export const getFilms = () => {
   return fetch('https://swapi.co/api/films')
-    .then(response => response.json())
+    .then(response => {
+      if(!response.ok) {
+        throw Error('Could not fetch films, please refresh the page and try again')
+      }
+      return response.json()})
     .then(data => sortFilmsByReleaseDate(data))
-    .catch(error => console.log(error));
 }
 
 const sortFilmsByReleaseDate = (data) => {
@@ -23,7 +26,11 @@ const sortFilmsByReleaseDate = (data) => {
 
 export const getCharacters = (id) => {
   let url = `https://swapi.co/api/films/${id}`
-  return fetch(url).then(res => res.json())
+  return fetch(url).then(res => {
+    if(!res.ok) {
+      throw Error('Unable to fetch characters, click the movies tab and try again')
+    }
+    return res.json()})
   .then(data => data.characters)
   .then(data => cleanCharacterData(data))
   .then(chars => getSpeciesDataForCharacter(chars))
@@ -34,7 +41,6 @@ export const getCharacters = (id) => {
 
 const cleanCharacterData = (characterUrls) => {
   let charactersData = characterUrls.map(charUrl => {
-    console.log('charURL', charUrl)
     return fetch(charUrl).then(res => res.json()).then(data => {
       return {
         name:data.name,
@@ -52,7 +58,7 @@ const getSpeciesDataForCharacter = (chars) => {
     if (char.species.length === 0) {
       return {
         ...char,
-        species: 'None'
+        species: 'Unknown'
       }
     }
     return fetch(char.species).then(res => res.json()).then(species => {

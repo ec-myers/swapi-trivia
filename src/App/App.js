@@ -19,13 +19,15 @@ class App extends Component {
       haveMovies: false,
       haveCharacters: true, 
       isFormComplete: false,
-      favorites: []
+      favorites: [],
+      error: ''
     }
   }
 
   componentDidMount() {
 
     getFilms().then(data => this.setState({movies: data, haveMovies: true}))
+    .catch(error => this.setState({error: error}))
 
     if(localStorage.getItem('favorites')) {
       const storedFavorites = JSON.parse(localStorage.getItem('favorites'))
@@ -75,15 +77,16 @@ class App extends Component {
   }
 
   render() {
-    const{movies, characters, isFormComplete, userInfo, haveCharacters, selectedMovie, haveMovies, favorites} = this.state
+    const{movies, characters, isFormComplete, userInfo, haveCharacters, selectedMovie, haveMovies, favorites, error} = this.state
 
     return (
       <main className="App">
         <Route exact path='/' render={() => <Form getFormData={this.getFormData} />} />
         {isFormComplete && <Nav logOut={this.logOut} user={userInfo} />}
         {!haveMovies && <div className='loading-img'></div>}
+        {error && <div className="error-div">{error}</div>}
         <Route exact path='/movies' render={() => <Container cards={movies} goToMovieCharacters={this.goToMovieCharacters} />} />
-        {haveCharacters && <Route exact path='/movies/:id' render={() => <Container cards={characters} toggleFavorite={this.toggleFavorite} favorites={favorites} /> } />}
+        {haveCharacters && <Route exact path='/movies/:id' render={() => <Container type="characters" cards={characters} toggleFavorite={this.toggleFavorite} favorites={favorites} /> } />}
         <Route exact path='/favorites' render={() => <Container type='favorites' cards={favorites} favorites={favorites} toggleFavorite={this.toggleFavorite} />} />
         {haveMovies && !haveCharacters && <Scroll selectedMovie={selectedMovie} />}
       </main>

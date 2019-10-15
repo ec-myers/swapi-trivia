@@ -12,13 +12,17 @@ describe('MovieCard', () => {
       releaseYear: 2001,
       id: 3
     }
+
     wrapper = shallow(<MovieCard movie={mockMovie} goToMovieCharacters={mockGoToMovieCharacters} />)
   })
+
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot()
   })
+
   it('should call goToMovieCharacters on click', () => {
     wrapper.find('Link').simulate('click')
+    
     expect(mockGoToMovieCharacters).toHaveBeenCalled()
   })
 })
