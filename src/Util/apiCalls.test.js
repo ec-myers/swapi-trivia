@@ -56,7 +56,7 @@ describe('getCharacters', () => {
     })
   })
   it('should call fetch with correct URL', () => {
-    getCharacters(2)
+    getCharacters(2);
     expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/films/2')
   })
   it('should return an array of characters', () => {
