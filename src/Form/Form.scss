@@ -1,38 +1,64 @@
+$accent-color-dark: rgba(108, 91, 117, 0.8);
+$accent-color-light: rgba(242,136,79, 0.8);
+$font-color: #ffffff;
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400,500,700&display=swap');
+
 form {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 100px;
+}
+
+  .form-background {
+  background: $accent-color-dark;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  input {
-    margin: 10px;
-    width: 20%;
-    padding: 10px;
-  }
+  width: 50%;
 
-  select {
-    height: 3%;
-    margin: 10px;
-    width: 20%;
-  }
-
-  div {
-    min-height: 40px;
-    p {
-      display: inline;
+    input {
+      margin: 10px;
+      border-radius: 5px;
+      width: 50%;
+      padding: 10px;
     }
-  }
 
-    button {
+    select {
       height: 5%;
+      margin: 10px;
+      width: 50%;
+    }
 
-      margin-top: 10px;
-    &:hover {
-      cursor: pointer;
+    div {
+      min-height: 40px;
+      p {
+        display: inline;
+      }
+    }
+
+      button {
+        background: $accent-color-light;
+        border-radius: 5px;
+        height: 8%;
+        margin-top: 20px;
+        width: 50%;
+      &:hover {
+        cursor: pointer;
+        color: white;
+      }
+    }
+    .error {
+      outline: 3px solid red;
+    }
+    div {
+      color: peachpuff;
+      width: 50%;
+      text-align: center;
     }
   }
-  .error {
-    outline: 3px solid red;
-  }
-}
 

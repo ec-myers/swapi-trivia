@@ -3,13 +3,8 @@ import './CharacterCard.scss';
 
 const CharacterCard = ({character, toggleFavorite, favorites}) => {
   const { name, homeworld, population, species, films } = character;
-
-  // if (favorites.some(favorite => favorite.name === name)) {
-  //  character.isFavorite = true
-  // }
-
   const allFilms = films.map(film => {
-   return <li>{film}</li>
+  return <li>{film}</li>
   })
 
   return (

@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav should match the snapshot 1`] = `
+<nav>
+  <div
+    className="user-container"
+  >
+    <div
+      className="inner"
+    >
+      <span>
+        i
+      </span>
+      <h1>
+        Greg
+      </h1>
+      <p>
+        "
+        I know
+        "
+      </p>
+      <h2>
+        Rank: 
+        Jedi Knight
+      </h2>
+    </div>
+  </div>
+  <NavLink
+    activeStyle={
+      Object {
+        "color": "coral",
+      }
+    }
+    className="nav-link"
+    to="/movies"
+  >
+    Movies
+  </NavLink>
+  <NavLink
+    activeStyle={
+      Object {
+        "color": "coral",
+      }
+    }
+    className="nav-link"
+    to="/favorites"
+  >
+    Favorites
+  </NavLink>
+  <Link
+    onClick={[MockFunction]}
+    to="/"
+  >
+    <button>
+      Logout
+    </button>
+  </Link>
+</nav>
+`;
