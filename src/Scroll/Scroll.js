@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Scroll.scss'
 
 
@@ -21,3 +22,7 @@ const Scroll = ({selectedMovie}) => {
 }
 
 export default Scroll;
+
+Scroll.propTypes = {
+  selectedMovie: PropType.object
+}
