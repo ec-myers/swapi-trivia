@@ -73,7 +73,7 @@ class App extends Component {
 
   logOut = () => {
     localStorage.clear()
-    this.setState({isFormComplete: false})
+    this.setState({ isFormComplete: false, userInfo: {} })
   }
 
   render() {

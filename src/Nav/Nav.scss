@@ -46,14 +46,14 @@ nav {
   clip-path: circle(7% at 10% 30%);
   cursor: pointer;
   margin-top: 10px;
-  padding: 1em;
   margin-top: 50px;
+  padding: 1em;
   transition: all .5s ease-in-out;
   width: 500px;
 
   &:hover {
-    clip-path: circle(75%);
     background: #e76551;
+    clip-path: circle(75%);
   }
 
   h1 {
@@ -70,12 +70,13 @@ nav {
   span {
     float: left;
     color: white;
+    float: left;
     font-weight: bold;
-    transition: color .5s;
-    position: relative;
-    margin-top: 5px;
-    margin-left: 29px;
     height: 10px;
+    margin-left: 29px;
+    margin-top: 5px;
+    position: relative;
+    transition: color .5s;
     width: 10px;
   }
 
