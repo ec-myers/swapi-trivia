@@ -2,25 +2,25 @@
 
 exports[`CharacterCard should match the snapshot 1`] = `
 <div
-  className="Character-Card"
+  className="Character-Card favorite"
 >
   <h2>
     Luke Skywalker
   </h2>
   <h3>
-    Homeworld:
+    Homeworld: 
     Tattooine
   </h3>
   <h3>
-    Population:
+    Population: 
     200000
   </h3>
   <h3>
-    Species:
+    Species: 
     human
   </h3>
   <ul>
-    Films:
+    Films: 
     <li>
       blah
     </li>
@@ -28,13 +28,18 @@ exports[`CharacterCard should match the snapshot 1`] = `
       blah
     </li>
   </ul>
-  <button
-    id="Luke Skywalker"
-    onClick={[Function]}
+  <div
+    className="div-favorite"
   >
-    Favorite (
-    1
-    )
-  </button>
+    <button
+      id="Luke Skywalker"
+      onClick={[Function]}
+    >
+      Remove Favorite
+       (
+      1
+      )
+    </button>
+  </div>
 </div>
 `;

@@ -11,18 +11,18 @@ exports[`Nav should match the snapshot 1`] = `
       <span>
         i
       </span>
-      <h1>
-        Greg
-      </h1>
       <p>
-        "
-        I know
-        "
+        Name: 
+        Greg
       </p>
-      <h2>
+      <p>
+        Quote: 
+        I know
+      </p>
+      <p>
         Rank: 
         Jedi Knight
-      </h2>
+      </p>
     </div>
   </div>
   <NavLink
