@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import PropTypes from 'prop-types'
 import './Nav.scss';
 
 const Nav = ({user, logOut}) => {
@@ -23,3 +24,8 @@ const Nav = ({user, logOut}) => {
 }
 
 export default Nav;
+
+Nav.propTypes = {
+  user: PropTypes.object.isRequired,
+  logOut: PropTypes.func.isRequired
+}

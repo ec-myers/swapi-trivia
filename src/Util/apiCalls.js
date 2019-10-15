@@ -62,7 +62,6 @@ const getSpeciesDataForCharacter = (chars) => {
       }
     }
     return fetch(char.species).then(res => res.json()).then(species => {
-      console.log(char.species)
       return {
         ...char,
         species: species.name
