@@ -90,9 +90,7 @@ class App extends Component {
         <Route exact path='/favorites' render={() => <Container type='favorites' cards={favorites} favorites={favorites} toggleFavorite={this.toggleFavorite} />} />
         {haveMovies && !haveCharacters && <Scroll selectedMovie={selectedMovie} />}
       </main>
-  
     )
-
   }
 }
 
