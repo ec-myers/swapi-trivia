@@ -6,7 +6,7 @@ $font-color: #ffffff;
 .Character-Card {
   background-color: $accent-color-dark;
   border-radius: 10px;
-  border: solid 2px #ffffff;
+  border: solid 2px $hover-color;
   box-shadow: 0 0 5px #ffffff;
   box-sizing: border-box;
   color: $font-color;
@@ -58,4 +58,17 @@ $font-color: #ffffff;
       background-color: $hover-color;
     }
   }
+}
+
+.favorite {
+  border: 3px solid white;
+  background: rgba(108, 91, 117, 0.9);
+
+  button {
+    background: $hover-color;
+    &:hover {
+      background-color: $accent-color-light;
+    }
+  }
+
 }

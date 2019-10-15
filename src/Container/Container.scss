@@ -7,10 +7,20 @@ $accent-color-light: rgba(242,136,79, 0.8);
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
     overflow: scroll;
-  // break-inside: avoid;
-  // column-count: 3;
-  // column-width: 15em; 
-  // padding: 10px;
-  // width: 100%;
   height: 100vh;
+}
+
+.empty-favorites {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  height: 100vh;
+  padding-top: 20px;
+  h3 {
+    font-size: 3em;
+  }
+  p {
+    font-size: 2em;
+  }
 }

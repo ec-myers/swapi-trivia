@@ -1,13 +1,21 @@
 $accent-color-dark: rgba(108, 91, 117, 0.8);
 $accent-color-light: rgba(242,136,79, 0.8);
+$hover-color: rgba(231, 101, 81, 0.8);
 $font-color: #ffffff;
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400,500,700&display=swap');
 
 form {
   height: 100vh;
   display: flex;
+  align-items: center;
+  flex-direction: column;
   justify-content: center;
   padding: 100px;
+  h1 {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+  }
 }
 
   .form-background {
@@ -15,20 +23,29 @@ form {
   border: 1px solid white;
   border-radius: 5px;
   color: white;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 50%;
 
+  label {
+    font-size: 18px;
+  }
+
     input {
       margin: 10px;
       border-radius: 5px;
       width: 50%;
       padding: 10px;
+      &::placeholder {
+        font-size: 16px;
+      }
     }
 
     select {
+      font-size: 16px;
       height: 5%;
       margin: 10px;
       width: 50%;
@@ -44,19 +61,22 @@ form {
       button {
         background: $accent-color-light;
         border-radius: 5px;
+        font-size: 18px;
         height: 8%;
         margin-top: 20px;
         width: 50%;
       &:hover {
         cursor: pointer;
         color: white;
+        background: $hover-color;
       }
     }
     .error {
-      outline: 3px solid red;
+      outline: 3px solid #d93b3d;
     }
     div {
-      color: peachpuff;
+      color: #DC5351;
+      font-weight: 700;
       width: 50%;
       text-align: center;
     }
