@@ -7,10 +7,10 @@ const Nav = ({user, logOut}) => {
   <nav>
     <div className='user-container'>
       <div className='inner'>
-        <span>i</span>
-        <h1>{user.name}</h1>
-        <p>"{user.quote}"</p>
-        <h2>Rank: {user.rank}</h2>
+          <span>i</span>
+        <p>Name: {user.name}</p>
+        <p>Quote: {user.quote}</p>
+        <p>Rank: {user.rank}</p>
       </div>
     </div>
       <NavLink to='/movies' className='nav-link' activeStyle={{ color: 'coral' }}>Movies</NavLink>
