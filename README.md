@@ -14,8 +14,16 @@ This project was an opportunity to focus on utilizing a modular architecture to 
 - Webpack
 - Jest and Enyzme testing suite
 
-### Screenshot
-![screencapture-localhost-3000-2019-10-06-22_41_38.pdf]()
+### Screenshots
+
+#### Login Screen
+![login](https://user-images.githubusercontent.com/47042400/66871377-bf7c3d00-ef60-11e9-8f16-606963e4df26.png)
+#### Movies 
+![movies](https://user-images.githubusercontent.com/47042400/66871464-f3576280-ef60-11e9-9778-22e24d230613.png)
+#### Characters
+![characters](https://user-images.githubusercontent.com/47042400/66871550-1d108980-ef61-11e9-91ad-14c50e9fbb5d.png)
+#### Favorites
+![favorites](https://user-images.githubusercontent.com/47042400/66871557-1eda4d00-ef61-11e9-808b-c53d7a8ea587.png)
 
 ### Set Up
 
