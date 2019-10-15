@@ -32,7 +32,7 @@ describe('Form', () => {
     wrapper.find('button').simulate('click', dEvent)
     expect(wrapper.state('isComplete')).toEqual(true)
   })
-  it('should not be marked complete if a section is missing on submit and should have an error', () => {
+  it('should not be marked complete if the quote section is missing on submit and should have an error', () => {
     const mockEvent = { target: { id: 'name', value: 'Kimberly' }, preventDefault: jest.fn() };
     const expected = 'Kimberly';
     wrapper.instance().handleChange(mockEvent);
@@ -41,6 +41,16 @@ describe('Form', () => {
     wrapper.find('button').simulate('click', mockEvent)
     expect(wrapper.state('isComplete')).toEqual(false)
     expect(wrapper.state('quoteErr')).toEqual(true)
+  })
+  it('should not be marked complete if the name section is missing on submit and should have an error', () => {
+    const mockEvent = { target: { id: 'quote', value: "Who's scruffy looking?" }, preventDefault: jest.fn() };
+    const expected = "Who's scruffy looking?";
+    wrapper.instance().handleChange(mockEvent);
+    expect(wrapper.state('quote')).toEqual(expected);
+    expect(wrapper.state('name')).toEqual('')
+    wrapper.find('button').simulate('click', mockEvent)
+    expect(wrapper.state('isComplete')).toEqual(false)
+    expect(wrapper.state('nameErr')).toEqual(true)
   })
   it('should run handleChange when the inputs detect a change', () => {
     const mockNameEvent = { target: { id: 'name', value: 'Robbie' } };
