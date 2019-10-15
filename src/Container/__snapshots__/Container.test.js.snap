@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container with Characters should match the snapshot when rendering characters 1`] = `
+<section
+  className="Container"
+>
+  <CharacterCard
+    character={
+      Object {
+        "films": Array [
+          "blah",
+          "blah",
+        ],
+        "homeworld": "Tattooine",
+        "name": "Luke Skywalker",
+        "population": 200000,
+        "species": "human",
+      }
+    }
+    key="Luke Skywalker"
+    toggleFavorite={[MockFunction]}
+  />
+</section>
+`;
+
+exports[`Container with Favorites should match the snapshot when rendering multiple favorites 1`] = `
+<section
+  className="Container"
+>
+  <CharacterCard
+    character={
+      Object {
+        "films": Array [
+          "blah",
+          "blah",
+        ],
+        "homeworld": "Tattooine",
+        "name": "Luke Skywalker",
+        "population": 200000,
+        "species": "human",
+      }
+    }
+    favorites={
+      Array [
+        Object {
+          "films": Array [
+            "blah",
+            "blah",
+          ],
+          "homeworld": "Tattooine",
+          "name": "Luke Skywalker",
+          "population": 200000,
+          "species": "human",
+        },
+        Object {
+          "films": Array [
+            "All of them",
+            "blah",
+          ],
+          "homeworld": "Tattooine",
+          "name": "Luke C3-PO",
+          "population": 200000,
+          "species": "Droid",
+        },
+      ]
+    }
+    key="Luke Skywalker"
+    toggleFavorite={[MockFunction]}
+  />
+  <CharacterCard
+    character={
+      Object {
+        "films": Array [
+          "All of them",
+          "blah",
+        ],
+        "homeworld": "Tattooine",
+        "name": "Luke C3-PO",
+        "population": 200000,
+        "species": "Droid",
+      }
+    }
+    favorites={
+      Array [
+        Object {
+          "films": Array [
+            "blah",
+            "blah",
+          ],
+          "homeworld": "Tattooine",
+          "name": "Luke Skywalker",
+          "population": 200000,
+          "species": "human",
+        },
+        Object {
+          "films": Array [
+            "All of them",
+            "blah",
+          ],
+          "homeworld": "Tattooine",
+          "name": "Luke C3-PO",
+          "population": 200000,
+          "species": "Droid",
+        },
+      ]
+    }
+    key="Luke C3-PO"
+    toggleFavorite={[MockFunction]}
+  />
+</section>
+`;
+
+exports[`Container with Movies should match the snapshot when rendering movies 1`] = `
+<section
+  className="Container"
+>
+  <MovieCard
+    key="1"
+    movie={
+      Object {
+        "episode": 1,
+        "id": 3,
+        "releaseYear": 2001,
+        "title": "Bad Prequel",
+      }
+    }
+  />
+  <MovieCard
+    key="2"
+    movie={
+      Object {
+        "episode": 2,
+        "id": 7,
+        "releaseYear": 2007,
+        "title": "Worse Prequel",
+      }
+    }
+  />
+</section>
+`;
+
+exports[`Container with no favorites should match the snapshot when rendering and favorites is empty 1`] = `
+<div
+  className="empty-favorites"
+>
+  <h3>
+    Add some favorites!
+  </h3>
+  <p>
+    Head back to the 'Movies' Tab
+  </p>
+</div>
+`;
