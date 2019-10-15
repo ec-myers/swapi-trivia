@@ -2,6 +2,8 @@
 
 SWAPI Trivia is an application designed to allow users to interact with Star Wars movie information. Users are able to view all seven movies and their related character information. Users can also keep track of their favorite characters - this feature is implemented using localStorage. This application consumes data from the Star Wars API and was bootstrapped with `create-react-app`.
 
+### View the live application [here](https://ec-myers.github.io/swapi-trivia/)!
+
 ### Summary
 This project was an opportunity to focus on utilizing a modular architecture to create a user-friendly application with React. It was also a chance to practice nested fetch requests using `prop-types`, and  handling the UI based on acceptance of data. This application is accompanied by a full test suite that utilizes jest and enzyme. Testing provided an opportunity to write tests for asynchronous functionality and route handling as well as React components.
 
