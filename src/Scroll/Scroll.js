@@ -20,4 +20,4 @@ const Scroll = ({selectedMovie}) => {
   )
 }
 
-export default Scroll
+export default Scroll;

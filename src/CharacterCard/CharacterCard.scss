@@ -1,0 +1,61 @@
+$accent-color-dark: rgba(108, 91, 117, 0.8);
+$accent-color-light: rgba(242,136,79, 0.8);
+$hover-color: rgba(231,101,81, 0.8);
+$font-color: #ffffff;
+
+.Character-Card {
+  background-color: $accent-color-dark;
+  border-radius: 10px;
+  border: solid 2px #ffffff;
+  box-shadow: 0 0 5px #ffffff;
+  box-sizing: border-box;
+  color: $font-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+
+  h2 {
+    border-bottom: 4px solid #ffffff;
+    font-size: 28px;
+    padding-bottom: 5px;
+    text-align: center;
+  }
+
+  h3 {
+    margin: 9px;
+    font-size: 24px;
+  }
+
+  ul {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 9px;
+    min-height: 250px;
+    list-style-type: none;
+  }
+
+  li {
+    font-weight: normal;
+    margin: 10px;
+  }
+
+  .div-favorite {
+    text-align: center;
+  }
+
+  button {
+    border-radius: 5px;
+    background: $accent-color-light;
+    color: $font-color;
+    height: 40px;
+    width: 225px;
+    font-size: 18px;
+    margin: 10px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $hover-color;
+    }
+  }
+}

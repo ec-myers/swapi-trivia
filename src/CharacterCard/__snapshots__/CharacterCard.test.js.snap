@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharacterCard should match the snapshot 1`] = `
+<div
+  className="Character-Card"
+>
+  <h2>
+    Luke Skywalker
+  </h2>
+  <h3>
+    Homeworld:
+    Tattooine
+  </h3>
+  <h3>
+    Population:
+    200000
+  </h3>
+  <h3>
+    Species:
+    human
+  </h3>
+  <ul>
+    Films:
+    <li>
+      blah
+    </li>
+    <li>
+      blah
+    </li>
+  </ul>
+  <button
+    id="Luke Skywalker"
+    onClick={[Function]}
+  >
+    Favorite (
+    1
+    )
+  </button>
+</div>
+`;
