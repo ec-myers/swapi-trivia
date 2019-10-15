@@ -2,6 +2,9 @@
 
 exports[`Form should match the snapshot 1`] = `
 <form>
+  <h1>
+    Star Wars Character Trivia!
+  </h1>
   <div
     className="form-background"
   >

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import App from './App';
-import { getFilms } from '../Util/apiCalls';
+import { getFilms, getCharacters } from '../Util/apiCalls';
 
 jest.mock('../Util/apiCalls.js');
 
@@ -41,7 +41,7 @@ describe('App', () => {
     expect(getFilms).toHaveBeenCalled();
   });
 
-  it('should update state with characters when called', () => {
+  it('should update state with the user when called', () => {
     let user = {
       name: 'Greg',
       quote: 'Yolo',
@@ -49,13 +49,45 @@ describe('App', () => {
     };
 
     window.localStorage = jest.fn();
-
     expect(wrapper.state('userInfo')).toEqual({});
     expect(wrapper.state('isFormComplete')).toEqual(false);
     wrapper.instance().getFormData(user);
     expect(wrapper.state('userInfo')).toEqual(user);
     expect(wrapper.state('isFormComplete')).toEqual(true);
   });
+
+  it('should update state with characters when called', async () => {
+    const wrapper = shallow(<App />)
+    let characters = [{
+      name: 'Steve',
+      homeworld: 'Dantooine',
+      population: 200000,
+      species: "Twi'lek",
+      films: ['movie', 'other movie']
+    }, 
+    {
+      name: 'Greg',
+      homeworld: 'Kashyyk',
+      population: 50000,
+      species: 'Wookie',
+      films: ['movie', 'other movie']
+    }
+  ]
+    getCharacters.mockImplementation(() => Promise.resolve(characters))
+
+    let mockEvent = {target: {id:1}}
+    wrapper.instance().setState({movies: mockFilms, haveCharacters: false})
+
+    expect(wrapper.state('haveCharacters')).toEqual(false)
+    expect(wrapper.state('characters')).toEqual([])
+
+    await wrapper.instance().goToMovieCharacters(mockEvent);
+
+    expect(wrapper.state('characters')).toEqual(characters)
+    expect(wrapper.state('haveCharacters')).toEqual(true)
+    expect(getCharacters).toHaveBeenCalled()
+
+  })
 
   it('should update state when new character is favorited', () => {
     let character = {
@@ -100,6 +132,16 @@ describe('App', () => {
     expect(wrapper.state('userInfo')).toEqual({});
     expect(wrapper.state('isFormComplete')).toEqual(false);
   });
-
-
 });
+
+describe('App with no movies', () => {
+  it('should render the loading img if no movies are present', () => {
+    const wrapper = shallow(<App
+      isFormComplete={true}
+      haveMovies={false}
+      haveCharacters={true}
+    />)
+
+    expect(wrapper).toMatchSnapshot()
+  })
+})
