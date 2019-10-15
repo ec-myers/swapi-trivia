@@ -1,9 +1,9 @@
 $accent-color-dark: rgba(108, 91, 117, 0.8);
 $accent-color-light: rgba(242,136,79, 0.8);
+$hover-color: rgba(231,101,81, 0.8);
 $font-color: #ffffff;
 
 .Character-Card {
-  align-items: center;
   background-color: $accent-color-dark;
   border-radius: 10px;
   border: solid 2px #ffffff;
@@ -16,11 +16,32 @@ $font-color: #ffffff;
   padding: 20px;
 
   h2 {
+    border-bottom: 4px solid #ffffff;
+    font-size: 28px;
+    padding-bottom: 5px;
     text-align: center;
   }
 
   h3 {
-    margin: 4px;
+    margin: 9px;
+    font-size: 24px;
+  }
+
+  ul {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 9px;
+    min-height: 250px;
+    list-style-type: none;
+  }
+
+  li {
+    font-weight: normal;
+    margin: 10px;
+  }
+
+  .div-favorite {
+    text-align: center;
   }
 
   button {
@@ -34,6 +55,7 @@ $font-color: #ffffff;
 
     &:hover {
       cursor: pointer;
+      background-color: $hover-color;
     }
   }
 }
