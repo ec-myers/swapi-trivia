@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getFilms, getCharacters } from '../Util/apiCalls';
-import { NavLink, BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import '../App/App.scss';
 import Form from '../Form/Form';
 import Container from '../Container/Container';
