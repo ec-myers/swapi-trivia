@@ -5,7 +5,12 @@ import './Container.scss';
 
 const Container = ({cards, goToMovieCharacters, toggleFavorite, favorites, type}) => {
   if (type === 'favorites' && favorites.length === 0) {
-    return <h3>Add some favorites!</h3>
+    return (
+      <div className="empty-favorites">
+        <h3>Add some favorites!</h3>
+        <p>Head back to the 'Movies' Tab</p>
+      </div>
+    )
   }
   let selectedCards = cards
   if (type === 'characters') 

@@ -51,6 +51,7 @@ class Form extends Component {
 
     return (
       <form>
+        <h1>Star Wars Character Trivia!</h1>
         <div className="form-background">
           <label htmlFor="name">Name</label>
           <input autoFocus value={name} id="name" 
