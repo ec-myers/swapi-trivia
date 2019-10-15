@@ -46,5 +46,5 @@ npm start
 Then navigate to your browser:
 
 ```
-http://localHost:8080/
+http://localHost:3000/
 ```
