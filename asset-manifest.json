@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/swapi-trivia/static/css/main.33e5d511.chunk.css",
+    "main.js": "/swapi-trivia/static/js/main.5fbddc3b.chunk.js",
+    "main.js.map": "/swapi-trivia/static/js/main.5fbddc3b.chunk.js.map",
+    "runtime-main.js": "/swapi-trivia/static/js/runtime-main.ac423d25.js",
+    "runtime-main.js.map": "/swapi-trivia/static/js/runtime-main.ac423d25.js.map",
+    "static/js/2.3fe8a09c.chunk.js": "/swapi-trivia/static/js/2.3fe8a09c.chunk.js",
+    "static/js/2.3fe8a09c.chunk.js.map": "/swapi-trivia/static/js/2.3fe8a09c.chunk.js.map",
+    "index.html": "/swapi-trivia/index.html",
+    "precache-manifest.4d8b524fec72ec62797aa315eba1396b.js": "/swapi-trivia/precache-manifest.4d8b524fec72ec62797aa315eba1396b.js",
+    "service-worker.js": "/swapi-trivia/service-worker.js",
+    "static/css/main.33e5d511.chunk.css.map": "/swapi-trivia/static/css/main.33e5d511.chunk.css.map",
+    "static/media/App.scss": "/swapi-trivia/static/media/tatooine_background.af239dd1.jpg",
+    "static/media/Scroll.scss": "/swapi-trivia/static/media/spaceImg.2b2bc624.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ac423d25.js",
+    "static/js/2.3fe8a09c.chunk.js",
+    "static/css/main.33e5d511.chunk.css",
+    "static/js/main.5fbddc3b.chunk.js"
+  ]
+}
