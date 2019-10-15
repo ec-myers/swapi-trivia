@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import MovieCard from '../MovieCard/MovieCard';
 import CharacterCard from '../CharacterCard/CharacterCard';
 import './Container.scss';
@@ -28,3 +29,11 @@ const Container = ({cards, goToMovieCharacters, toggleFavorite, favorites, type}
 }
 
 export default Container;
+
+Container.propTypes = {
+  cards: PropTypes.array,
+  goToMovieCharacters: PropTypes.func,
+  toggleFavorite: PropTypes.func,
+  favorites: PropTypes.array,
+  type: PropTypes.string
+}

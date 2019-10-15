@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './CharacterCard.scss';
 
 const CharacterCard = ({character, toggleFavorite, favorites}) => {
@@ -24,3 +25,9 @@ const CharacterCard = ({character, toggleFavorite, favorites}) => {
 }
 
 export default CharacterCard;
+
+CharacterCard.propTypes = {
+  character: PropTypes.string,
+  toggleFavorite: PropTypes.func,
+  favorites: PropTypes.array
+}
