@@ -2,65 +2,69 @@
 
 exports[`Form should match the snapshot 1`] = `
 <form>
-  <label
-    htmlFor="name"
+  <div
+    className="form-background"
   >
-    Name
-  </label>
-  <input
-    autoFocus={true}
-    className=""
-    id="name"
-    onChange={[Function]}
-    placeholder="Enter a name"
-    value=""
-  />
-  <div />
-  <label
-    htmlFor="quote"
-  >
-    Favorite Star Wars Quote
-  </label>
-  <input
-    className=""
-    id="quote"
-    onChange={[Function]}
-    placeholder="Enter your favorite Quote"
-    value=""
-  />
-  <div />
-  <label
-    htmlFor="rank"
-  >
-    Rank
-  </label>
-  <select
-    id="rank"
-    onChange={[Function]}
-    value="Padawan"
-  >
-    <option
-      selected={true}
+    <label
+      htmlFor="name"
+    >
+      Name
+    </label>
+    <input
+      autoFocus={true}
+      className=""
+      id="name"
+      onChange={[Function]}
+      placeholder="Enter a name"
+      value=""
+    />
+    <div />
+    <label
+      htmlFor="quote"
+    >
+      Favorite Star Wars Quote
+    </label>
+    <input
+      className=""
+      id="quote"
+      onChange={[Function]}
+      placeholder="Enter your favorite Quote"
+      value=""
+    />
+    <div />
+    <label
+      htmlFor="rank"
+    >
+      Rank
+    </label>
+    <select
+      id="rank"
+      onChange={[Function]}
       value="Padawan"
     >
-      Padawan
-    </option>
-    <option
-      value="Jedi Knight"
+      <option
+        selected={true}
+        value="Padawan"
+      >
+        Padawan
+      </option>
+      <option
+        value="Jedi Knight"
+      >
+        Jedi Knight
+      </option>
+      <option
+        value="Jedi Master"
+      >
+        Jedi Master
+      </option>
+    </select>
+    <button
+      onClick={[Function]}
+      type="button"
     >
-      Jedi Knight
-    </option>
-    <option
-      value="Jedi Master"
-    >
-      Jedi Master
-    </option>
-  </select>
-  <button
-    onClick={[Function]}
-    type="button"
-  >
-    May The Force Be With You
-  </button>
+      May The Force Be With You
+    </button>
+  </div>
 </form>
 `;
