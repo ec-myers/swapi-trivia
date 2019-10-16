@@ -24,5 +24,5 @@ const Scroll = ({selectedMovie}) => {
 export default Scroll;
 
 Scroll.propTypes = {
-  selectedMovie: PropType.object
+  selectedMovie: PropTypes.object
 }

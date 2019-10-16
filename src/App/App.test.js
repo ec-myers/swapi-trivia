@@ -134,6 +134,15 @@ describe('App', () => {
   });
 });
 
+describe('App with nav', () => {
+  it('should render the nav bar if the form is filled out', () => {
+    const wrapper = shallow(<App
+    />)
+    wrapper.setState({isFormComplete: true})
+    expect(wrapper).toMatchSnapshot()
+  })
+})
+
 describe('App with no movies', () => {
   it('should render the loading img if no movies are present', () => {
     const wrapper = shallow(<App
@@ -141,7 +150,16 @@ describe('App with no movies', () => {
       haveMovies={false}
       haveCharacters={true}
     />)
+    expect(wrapper).toMatchSnapshot()
+  })
+})
 
+describe('App with no characters', () => {
+  it('should render the Scroll if no characters are present', () => {
+    const wrapper = shallow(<App
+    
+    />)
+    wrapper.setState({haveMovies:true, haveCharacters: false})
     expect(wrapper).toMatchSnapshot()
   })
 })

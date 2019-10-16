@@ -27,6 +27,65 @@ exports[`App should match the snapshot 1`] = `
 </main>
 `;
 
+exports[`App with nav should render the nav bar if the form is filled out 1`] = `
+<main
+  className="App"
+>
+  <Route
+    exact={true}
+    path="/"
+    render={[Function]}
+  />
+  <Nav
+    logOut={[Function]}
+    user={Object {}}
+  />
+  <div
+    className="loading-img"
+  />
+  <Route
+    exact={true}
+    path="/movies"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/movies/:id"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/favorites"
+    render={[Function]}
+  />
+</main>
+`;
+
+exports[`App with no characters should render the Scroll if no characters are present 1`] = `
+<main
+  className="App"
+>
+  <Route
+    exact={true}
+    path="/"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/movies"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/favorites"
+    render={[Function]}
+  />
+  <Scroll
+    selectedMovie={Object {}}
+  />
+</main>
+`;
+
 exports[`App with no movies should render the loading img if no movies are present 1`] = `
 <main
   className="App"
