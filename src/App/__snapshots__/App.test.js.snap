@@ -38,6 +38,7 @@ exports[`App with nav should render the nav bar if the form is filled out 1`] = 
   />
   <Nav
     logOut={[Function]}
+    numFavs={0}
     user={Object {}}
   />
   <div

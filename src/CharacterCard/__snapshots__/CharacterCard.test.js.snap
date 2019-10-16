@@ -40,9 +40,6 @@ exports[`CharacterCard should match the snapshot 1`] = `
       onClick={[Function]}
     >
       Remove Favorite
-       (
-      1
-      )
     </button>
   </div>
 </div>
