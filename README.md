@@ -7,6 +7,16 @@ SWAPI Trivia is an application designed to allow users to interact with Star War
 ### Summary
 This project was an opportunity to focus on utilizing a modular architecture to create a user-friendly application with React. It was also a chance to practice nested fetch requests using `prop-types`, and  handling the UI based on acceptance of data. This application is accompanied by a full test suite that utilizes jest and enzyme. Testing provided an opportunity to write tests for asynchronous functionality and route handling as well as React components.
 
+### Planning/Project Management
+This project was managed using Trello. View the project board [here](https://trello.com/b/cZGCICec/swapi-trivia).
+
+#### Wireframe
+<details>
+  <summary>Click Here</summary>
+![swapiTrivia_wireframe_SS_EM](https://user-images.githubusercontent.com/47042400/66946860-10e30580-f00f-11e9-97e4-43a0333e397c.jpg)
+
+</details>
+
 ### Languages & Technologies Used
 
 - React
