@@ -20,7 +20,7 @@ export default MovieCard;
 
 MovieCard.propTypes = {
   movie: PropTypes.object.isRequired,
-  goToMovieCharacters: PropTypes.func.isRequired
+  goToMovieCharacters: PropTypes.func
 
 }
 

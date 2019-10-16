@@ -46,7 +46,7 @@ exports[`Form should match the snapshot 1`] = `
       value="Padawan"
     >
       <option
-        selected={true}
+        defaultValue={true}
         value="Padawan"
       >
         Padawan

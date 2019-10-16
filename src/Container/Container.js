@@ -13,6 +13,9 @@ const Container = ({cards, goToMovieCharacters, toggleFavorite, favorites, type}
       </div>
     )
   }
+  if(cards.length === 0) {
+    return <div>Woops</div>
+  }
   let selectedCards = cards
   if (type === 'characters') 
   {selectedCards = cards.slice(0, 10)}

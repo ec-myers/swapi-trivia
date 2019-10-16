@@ -72,7 +72,7 @@ class Form extends Component {
           <label htmlFor="rank">Rank</label>
           <select value={rank} 
           onChange={this.handleChange} id="rank">
-            <option value="Padawan" selected>Padawan</option>
+            <option value="Padawan" defaultValue>Padawan</option>
             <option value="Jedi Knight">Jedi Knight</option>
             <option value="Jedi Master">Jedi Master</option>
           </select>
