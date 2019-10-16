@@ -12,9 +12,9 @@ This project was managed using Trello. View the project board [here](https://tre
 
 #### Wireframe
 <details>
-  <summary>Click Here</summary>
-![swapiTrivia_wireframe_SS_EM](https://user-images.githubusercontent.com/47042400/66946860-10e30580-f00f-11e9-97e4-43a0333e397c.jpg)
-
+  <summary> Click to View </summary>
+  
+![](https://user-images.githubusercontent.com/47042400/66947779-b9de3000-f010-11e9-9934-c923245219c7.jpg)
 </details>
 
 ### Languages & Technologies Used
