@@ -3,7 +3,8 @@ import { NavLink, Link } from 'react-router-dom';
 import PropTypes from 'prop-types'
 import './Nav.scss';
 
-const Nav = ({user, logOut}) => {
+const Nav = ({user, logOut, numFavs}) => {
+  console.log(numFavs)
   return (
   <nav>
     <div className='user-container'>
@@ -15,7 +16,7 @@ const Nav = ({user, logOut}) => {
       </div>
     </div>
       <NavLink to='/movies' className='nav-link' activeStyle={{ color: 'coral' }}>Movies</NavLink>
-      <NavLink to='/favorites' className='nav-link' activeStyle={{ color: 'coral' }}>Favorites</NavLink>
+      <NavLink to='/favorites' className='nav-link' activeStyle={{ color: 'coral' }}>Favorites({numFavs}) </NavLink>
     <Link onClick={logOut} to='/'>
       <button>Logout</button>
     </Link>

@@ -45,7 +45,8 @@ exports[`Nav should match the snapshot 1`] = `
     className="nav-link"
     to="/favorites"
   >
-    Favorites
+    Favorites(
+    ) 
   </NavLink>
   <Link
     onClick={[MockFunction]}
